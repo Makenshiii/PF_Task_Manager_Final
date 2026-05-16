@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Manager</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>Task Manager</h1>
+
+    <!-- FORM -->
+    <form id="taskForm">
+
+      <input
+        type="text"
+        id="taskInput"
+        placeholder="Enter task..."
+        required
+      >
+
+      <select id="categoryInput">
+        <option value="Work">Work</option>
+        <option value="Personal">Personal</option>
+        <option value="School">School</option>
+      </select>
+
+      <select id="priorityInput">
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+
+      <button type="submit">Add Task</button>
+
+    </form>
+
+    <!-- SEARCH -->
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search task..."
+    >
+
+    <!-- FILTER -->
+    <select id="filterCategory">
+      <option value="All">All</option>
+      <option value="Work">Work</option>
+      <option value="Personal">Personal</option>
+      <option value="School">School</option>
+    </select>
+
+    <!-- COUNTER -->
+    <div class="counter">
+      <p>Total: <span id="totalCount">0</span></p>
+      <p>Completed: <span id="completedCount">0</span></p>
+      <p>Pending: <span id="pendingCount">0</span></p>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="top-buttons">
+
+      <button type="button" id="darkModeBtn">
+        Dark Mode
+      </button>
+
+      <button type="button" id="exportBtn">
+        Export JSON
+      </button>
+
+    </div>
+
+    <!-- LOADING -->
+    <div id="loading" class="hidden">
+      Loading...
+    </div>
+
+    <!-- NOTIFICATION -->
+    <div id="notification"></div>
+
+    <!-- TASK LIST -->
+    <ul id="taskList"></ul>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

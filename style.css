@@ -1,0 +1,306 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: #333;
+}
+
+.container {
+  max-width: 850px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 36px;
+  color: #222;
+}
+
+/* FORM */
+form {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input,
+select,
+button {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+/* BUTTONS */
+button {
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* ADD BUTTON */
+form button {
+  background: #4f46e5;
+  color: white;
+}
+
+form button:hover {
+  background: #4338ca;
+}
+
+/* SEARCH */
+#searchInput {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* FILTER */
+#filterCategory {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+/* COUNTER */
+.counter {
+  display: flex;
+  justify-content: space-between;
+  background: #f8fafc;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* TOP BUTTONS */
+.top-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#darkModeBtn {
+  background: #111827;
+  color: white;
+}
+
+#darkModeBtn:hover {
+  background: #000;
+}
+
+#exportBtn {
+  background: #059669;
+  color: white;
+}
+
+#exportBtn:hover {
+  background: #047857;
+}
+
+/* TASK LIST */
+#taskList {
+  list-style: none;
+}
+
+/* TASK CARD */
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9fafb;
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 15px;
+  transition: 0.3s;
+  border-left: 6px solid transparent;
+}
+
+.task:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* COMPLETED TASK */
+.completed .task-text {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* PRIORITY COLORS */
+.high {
+  border-left-color: #ef4444;
+}
+
+.medium {
+  border-left-color: #f59e0b;
+}
+
+.low {
+  border-left-color: #10b981;
+}
+
+/* TASK TEXT */
+.task-text {
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* CATEGORY BADGE */
+.category {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 5px 10px;
+  border-radius: 30px;
+  font-size: 12px;
+  color: white;
+  font-weight: bold;
+}
+
+.Work {
+  background: #2563eb;
+}
+
+.Personal {
+  background: #9333ea;
+}
+
+.School {
+  background: #16a34a;
+}
+
+/* ACTION BUTTONS */
+.complete-btn,
+.delete-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  font-size: 16px;
+}
+
+.complete-btn {
+  background: #10b981;
+}
+
+.complete-btn:hover {
+  background: #059669;
+}
+
+.delete-btn {
+  background: #ef4444;
+  margin-left: 8px;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+/* NOTIFICATION */
+#notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #111827;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+/* LOADING */
+#loading {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #4f46e5;
+}
+
+.hidden {
+  display: none;
+}
+
+/* DARK MODE */
+.dark-mode {
+  background: #111827;
+  color: white;
+}
+
+.dark-mode .container {
+  background: #1f2937;
+}
+
+.dark-mode input,
+.dark-mode select {
+  background: #374151;
+  color: white;
+  border: 1px solid #4b5563;
+}
+
+.dark-mode .task {
+  background: #374151;
+}
+
+.dark-mode .counter {
+  background: #374151;
+}
+
+.dark-mode h1 {
+  color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  .counter {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .task {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .top-buttons {
+    flex-direction: column;
+  }
+
+  #filterCategory {
+    width: 100%;
+  }
+
+}
